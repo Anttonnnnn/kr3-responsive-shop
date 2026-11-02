@@ -6,6 +6,7 @@
   <meta name="description" content="Пояс для пауэрлифтинга – PowerShop.">
   <title>Пояс для пауэрлифтинга – PowerShop</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -14,7 +15,12 @@
       <a class="site-header__logo" href="index.html">
         <img src="images/logo.webp" alt="PowerShop">
       </a>
-      <nav class="site-nav" aria-label="Основная навигация">
+      
+      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
           <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
           <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
@@ -51,20 +57,22 @@
       </div>
 
       <h2>Характеристики</h2>
-      <table class="product-table">
-        <caption>Основные параметры</caption>
-        <thead>
-          <tr><th>Параметр</th><th>Значение</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Категория</td><td>Пояса</td></tr>
-          <tr><td>Материал</td><td>Натуральная кожа</td></tr>
-          <tr><td>Ширина</td><td>10 см</td></tr>
-          <tr><td>Цена</td><td>5000 руб.</td></tr>
-          <tr><td>Наличие</td><td>В наличии</td></tr>
-          <tr><td>Гарантия</td><td>12 месяцев</td></tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper">
+        <table class="product-table">
+          <caption>Основные параметры</caption>
+          <thead>
+            <tr><th>Параметр</th><th>Значение</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Категория</td><td>Пояса</td></tr>
+            <tr><td>Материал</td><td>Натуральная кожа</td></tr>
+            <tr><td>Ширина</td><td>10 см</td></tr>
+            <tr><td>Цена</td><td>5000 руб.</td></tr>
+            <tr><td>Наличие</td><td>В наличии</td></tr>
+            <tr><td>Гарантия</td><td>12 месяцев</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
   </main>
 

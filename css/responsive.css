@@ -1,0 +1,244 @@
+html {
+  scroll-behavior: smooth;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.site-header,
+.hero,
+.section,
+.aside-info,
+.catalog-layout,
+footer {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+footer > div {
+  padding: 0;
+}
+
+.section {
+  padding-block: 24px;
+}
+
+.burger {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin-bottom: 5px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger span:last-child {
+  margin-bottom: 0;
+}
+
+.burger--active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.burger--active span:nth-child(2) { opacity: 0; }
+.burger--active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+@media (max-width: 1023px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 16px;
+  }
+
+  .burger {
+    display: block;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1002;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+  }
+
+  .site-nav--open {
+    right: 0;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+  }
+
+  .site-nav__link {
+    font-size: 20px;
+    padding: 16px 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-block: 24px;
+  }
+  
+  .site-nav {
+    display: block;
+  }
+}
+
+.products-grid,
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.product-card__image {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.catalog-filters {
+  position: static;
+  max-height: none;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.product-table {
+  min-width: 600px;
+}
+
+.order-dialog {
+  width: calc(100% - 32px);
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.order-form__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-form__actions .button {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .products-grid,
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-form__actions {
+    flex-direction: row;
+  }
+  .order-form__actions .button {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .catalog-layout {
+    grid-template-columns: 260px 1fr;
+  }
+  .catalog-filters {
+    position: sticky;
+    top: 16px;
+    max-height: calc(100vh - 32px);
+  }
+}
+
+@media (max-width: 767px) {
+  .table-wrapper {
+    overflow-x: visible;
+  }
+  .product-table {
+    min-width: 100%;
+    border: none;
+  }
+  .product-table caption {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .product-table thead {
+    display: none;
+  }
+  .product-table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    padding: 10px;
+  }
+  .product-table td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .product-table td:last-child {
+    border-bottom: none;
+  }
+  .product-table td:nth-child(1)::before {
+    content: "Параметр: ";
+    font-weight: 700;
+  }
+  .product-table td:nth-child(2)::before {
+    content: "Значение: ";
+    font-weight: 700;
+  }
+}
