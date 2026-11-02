@@ -171,3 +171,15 @@ if (filtersForm) {
     });
   });
 }
+
+// Логика мобильного меню (Бургер)
+const burgerBtn = document.getElementById('burger');
+const siteNav = document.getElementById('site-nav');
+
+if (burgerBtn && siteNav) {
+  burgerBtn.addEventListener('click', () => {
+    const isOpen = siteNav.classList.toggle('site-nav--open');
+    burgerBtn.classList.toggle('burger--active');
+    burgerBtn.setAttribute('aria-expanded', isOpen);
+  });
+}
