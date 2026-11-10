@@ -103,6 +103,52 @@ footer > div {
     font-size: 20px;
     padding: 16px 24px;
   }
+
+  .catalog-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    grid-template-columns: none;
+    grid-template-areas: none;
+  }
+
+  .catalog-filters {
+    grid-area: auto;
+    position: static;
+    max-height: none;
+    width: 100%;
+  }
+
+  .catalog-products {
+    grid-area: auto;
+    width: 100%;
+  }
+
+  .product-card--detail {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .table-wrapper {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  .product-page h2 {
+    margin-top: 32px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .product-card--detail .product-card__image {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+  }
 }
 
 @media (min-width: 1024px) {
